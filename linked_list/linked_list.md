@@ -20,3 +20,8 @@
   - append : Adds a value at the end of the list `tail-end insertion`.
   - insertAfter : Adds a value after a particular node in the list.
 
+<p float="left">
+   <img src="https://github.com/mo7amedaliEbaid/ds_dart/blob/45b499c4d535d5344e671aec032ca704bb9854a8/assets/insert_performance.png"  alt="linked list"/>
+</p>
+
+## Removing Values From a List.
