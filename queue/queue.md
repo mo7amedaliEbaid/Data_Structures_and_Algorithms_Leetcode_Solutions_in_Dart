@@ -19,6 +19,11 @@ abstract class Queue<E> {
 
 - You can create a queue using four different internal data structures:
   - List
+
+<p float="left">
+   <img src="https://github.com/mo7amedaliEbaid/ds_dart/blob/78295a524808ebcf8440435a5a0d737f15a20db6/assets/list_based_queue.png"  alt="linked list"/>
+</p>
+
   - Doubly linked list
   - Ring buffer
   - Two stacks
