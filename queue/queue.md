@@ -25,5 +25,9 @@ abstract class Queue<E> {
 </p>
 
   - Doubly linked list
+<p float="left">
+   <img src="https://github.com/mo7amedaliEbaid/ds_dart/blob/99c80aa784d6989c9216d6aedc93d1dc3a005036/assets/doubly_liked_list.png"  alt="linked list"/>
+</p>
+
   - Ring buffer
   - Two stacks
