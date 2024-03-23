@@ -17,14 +17,14 @@ abstract class Queue<E> {
    <img src="https://github.com/mo7amedaliEbaid/ds_dart/blob/0386069ac0a2422114b989396bb25f97106870c4/assets/queue.png"  alt="linked list"/>
 </p>
 
-- You can create a queue using four different internal data structures:
+ ## You can create a queue using four different internal data structures:
   - List
 
 <p float="left">
    <img src="https://github.com/mo7amedaliEbaid/ds_dart/blob/78295a524808ebcf8440435a5a0d737f15a20db6/assets/list_based_queue.png"  alt="linked list"/>
 </p>
 
-  - Doubly linked list
+   - Doubly linked list
 <p float="left">
    <img src="https://github.com/mo7amedaliEbaid/ds_dart/blob/99c80aa784d6989c9216d6aedc93d1dc3a005036/assets/doubly_liked_list.png"  alt="linked list"/>
 </p>
