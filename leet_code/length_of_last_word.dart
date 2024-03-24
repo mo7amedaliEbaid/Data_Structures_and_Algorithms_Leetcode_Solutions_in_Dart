@@ -1,6 +1,7 @@
 void main() {
   String sentence = "   fly me   to   the moon  ";
-///  String firstWord = getFirstWord(sentence);
+  print(lengthOfLastWord(sentence));
+  ///  String firstWord = getFirstWord(sentence);
 //  print(firstWord); // Output: fly
 }
 

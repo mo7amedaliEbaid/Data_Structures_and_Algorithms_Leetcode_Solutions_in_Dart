@@ -32,3 +32,12 @@
 
 - removeLast requires you to traverse all the way down the list. This makes for an O(n) operation, which is relatively expensive.
 
+<p float="left">
+   <img src="https://github.com/mo7amedaliEbaid/ds_dart/blob/a07c5b5ebd1e0adbb8d0620ecc03ba75ffab3c2d/assets/remove_performance.png"  alt="linked list"/>
+</p>
+
+- Note: The dart:collection library also contains a class named LinkedList . It only accepts elements of type LinkedListEntry , though, so it isn’t as flexible as yours was for making a list of arbitrary values. Additionally, the Dart version is a doubly linked list (linking to previous as well as next elements), whereas yours was a singly linked list. If you want to use a standard Dart collection that allows adding and removing at the ends in constant or amortized constant time, check out the Queue class.
+
+### Linked lists are linear and unidirectional. As soon as you move a reference from one node to another, you can’t go back.
+### Linked lists have O(1) time complexity for head first insertions, whereas standard lists have O(n) time complexity for head-first insertions.
+### Implementing the Dart Iterable interface allows you to loop through the elements of a collection as well as offering a host of other helpful methods.

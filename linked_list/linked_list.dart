@@ -16,12 +16,41 @@ class Node<T> {
   }
 }
 
-class LinkedList<E> {
+class _LinkedListIterator<E> implements Iterator<E> {
+  _LinkedListIterator(LinkedList<E> list) : _list = list;
+  final LinkedList<E> _list;
+
+  Node<E>? _currentNode;
+
+  @override
+  E get current => _currentNode!.value;
+
+  bool _firstPass = true;
+
+  @override
+  bool moveNext() {
+// 1
+    if (_list.isEmpty) return false;
+// 2
+    if (_firstPass) {
+      _currentNode = _list.head;
+      _firstPass = false;
+    } else {
+      _currentNode = _currentNode?.next;
+    }
+
+// 3
+    return _currentNode != null;
+  }
+}
+
+class LinkedList<E> extends Iterable<E> {
   LinkedList(this.head, this.tail);
 
   Node<E>? head;
   Node<E>? tail;
 
+  @override
   bool get isEmpty => head == null;
 
   void push(E value) {
@@ -110,6 +139,9 @@ class LinkedList<E> {
     if (isEmpty) return 'Empty list';
     return head.toString();
   }
+
+  @override
+  Iterator<E> get iterator => _LinkedListIterator(this);
 }
 
 void main() {
@@ -149,7 +181,7 @@ void main() {
   final removedValue = anotherList.removeLast();
   print('After: $anotherList');
   print('Removed value: $removedValue');
-  final list2 = LinkedList<int>(null,null);
+  final list2 = LinkedList<int>(null, null);
   list2.push(3);
   list2.push(2);
   list2.push(1);
@@ -158,4 +190,16 @@ void main() {
   final removedValueList2 = list2.removeAfter(firstNode!);
   print('After: $list2');
   print('Removed value: $removedValueList2');
+  final list3 = LinkedList<int>(null, null);
+  list3.push(3);
+  list3.push(2);
+  list3.push(1);
+  for (final element in list3) {
+    print(element);
+  }
+  // Looping through a collection is not the only benefit of implementing Iterable . You
+  // now have access to all sorts of methods like where , map , contains , and elementAt .
+  // Just keep in mind that these are O(n) operations, though. Even the innocuous-
+  // looking length requires iterating through the whole list to calculate.
+
 }
