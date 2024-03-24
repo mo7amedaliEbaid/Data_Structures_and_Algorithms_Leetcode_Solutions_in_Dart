@@ -25,3 +25,10 @@
 </p>
 
 ## Removing Values From a List.
+- There are three main operations for removing nodes:
+  - pop : Removes the value at the front of the list.
+  - removeLast : Removes the value at the end of the list.
+  - removeAfter : Removes the value after a particular node in the list.
+
+- removeLast requires you to traverse all the way down the list. This makes for an O(n) operation, which is relatively expensive.
+

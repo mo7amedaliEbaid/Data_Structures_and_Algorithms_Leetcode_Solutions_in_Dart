@@ -69,6 +69,42 @@ class LinkedList<E> {
     return node.next!;
   }
 
+  E? pop() {
+    final value = head?.value;
+    head = head?.next;
+    if (isEmpty) {
+      tail = null;
+    }
+    return value;
+  }
+
+//  removeLast requires you to traverse all the way down the list. This makes for an O(n)
+//  operation, which is relatively expensive.
+  E? removeLast() {
+// 1
+    if (head?.next == null) return pop();
+// 2
+    var current = head;
+    while (current!.next != tail) {
+      current = current.next;
+    }
+
+// 3
+    final value = tail?.value;
+    tail = current;
+    tail?.next = null;
+    return value;
+  }
+
+  E? removeAfter(Node<E> node) {
+    final value = node.next?.value;
+    if (node.next == tail) {
+      tail = node;
+    }
+    node.next = node.next?.next;
+    return value;
+  }
+
   @override
   String toString() {
     if (isEmpty) return 'Empty list';
@@ -107,4 +143,19 @@ void main() {
   var middleNode = anotherList.nodeAt(1)!;
   anotherList.insertAfter(middleNode, 42);
   print('After:$anotherList');
+  final poppedValue = anotherList.pop();
+  print('After: $anotherList');
+  print('Popped value: $poppedValue');
+  final removedValue = anotherList.removeLast();
+  print('After: $anotherList');
+  print('Removed value: $removedValue');
+  final list2 = LinkedList<int>(null,null);
+  list2.push(3);
+  list2.push(2);
+  list2.push(1);
+  print('Before: $list2');
+  final firstNode = list2.nodeAt(1);
+  final removedValueList2 = list2.removeAfter(firstNode!);
+  print('After: $list2');
+  print('Removed value: $removedValueList2');
 }
