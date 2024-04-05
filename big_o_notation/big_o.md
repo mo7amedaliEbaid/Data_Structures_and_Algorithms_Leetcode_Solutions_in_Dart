@@ -28,4 +28,8 @@
 - As the size of the sorted array doubles,
 - the number of iterations required by binary search increases by a constant factor due to the logarithmic nature of the algorithm.
 
+<p float="left">
+   <img src="https://github.com/mo7amedaliEbaid/ds_dart/blob/ad9e5d111bfe7f497eec1542b53c96004ce48654/assets/bigO.png"  alt="big_o"/>
+</p>
+
 
