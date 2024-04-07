@@ -19,8 +19,8 @@
 - The key feature of a stable sorting algorithm is that it will preserve the order of equal elements.
 - if our original sequence was \text{[“hello”, “world”, “we”, “are”, “learning, “sorting”]}.
 - There are two valid sorts for this sequence:
-  - 1. \text{[“we”, “are”, “hello”, “world”, “sorting”, “learning”]}.
-  - 2. \text{[“we”, “are”, “world”, “hello”, “sorting”, “learning”]}.
+  - 1. [“we”, “are”, “hello”, “world”, “sorting”, “learning”].
+  - 2. [“we”, “are”, “world”, “hello”, “sorting”, “learning”].
 - We consider `(1)` to be a stable sort since the equal elements “hello” and “world” are kept in the same relative order as the original sequence.
 
 ## Comparison Based Sort.
