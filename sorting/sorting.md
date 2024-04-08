@@ -22,5 +22,5 @@
   - 1. [“we”, “are”, “hello”, “world”, “sorting”, “learning”].
   - 2. [“we”, “are”, “world”, “hello”, “sorting”, “learning”].
 - We consider `(1)` to be a stable sort since the equal elements “hello” and “world” are kept in the same relative order as the original sequence.
-
+- A sorting algorithm is called stable if the elements of the same type retain their order after being sorted.
 
