@@ -36,3 +36,7 @@
 - Heaps are binary trees, but they are implemented with a simple list.
 - Using a list might seem like an unusual way to build a tree, but one of the benefits of this heap implementation is efficient time and space complexity since the elements in a heap are all stored together in memory.
 
+<p float="left">
+   <img src="https://github.com/mo7amedaliEbaid/ds_dart/blob/26764083f6e37e95ba181a80b13dd53fea228469/assets/heap_list.png"  alt="heap"/>
+</p>
+
