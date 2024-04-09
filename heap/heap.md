@@ -40,3 +40,8 @@
    <img src="https://github.com/mo7amedaliEbaid/ds_dart/blob/26764083f6e37e95ba181a80b13dd53fea228469/assets/heap_list.png"  alt="heap"/>
 </p>
 
+## Accessing Nodes.
+
+<p float="left">
+   <img src="https://github.com/mo7amedaliEbaid/ds_dart/blob/4e7d59d3fecb64435d0910e034318a135c6d3fb0/assets/accessing_heap.png"  alt="heap"/>
+</p>
