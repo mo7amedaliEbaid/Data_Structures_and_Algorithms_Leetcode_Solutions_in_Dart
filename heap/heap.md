@@ -11,7 +11,7 @@
   - The root node will always contain the lowest value.
 
 <p float="left">
-   <img src="https://github.com/mo7amedaliEbaid/ds_dart/blob/d84ae32d10fea85dfe1da42ab8ff85fc3bbb772e/assets/exam.jpeg"  alt="linked list"/>
+   <img src="https://github.com/mo7amedaliEbaid/ds_dart/blob/f3d63f7de82262edfaff7adb06291a3ec56eb7a0/assets/heap_property.png"  alt="heap"/>
 </p>
 
 - Note that unlike a binary search tree, it’s not a requirement of the heap property that the left or right child needs to be greater.
@@ -20,3 +20,19 @@
 - A heap must be a complete binary tree.
 - This means that every level must be filled except for the last level.
 - Additionally, when adding elements to the last level, you must add them from left to right.
+
+<p float="left">
+   <img src="https://github.com/mo7amedaliEbaid/ds_dart/blob/f3d63f7de82262edfaff7adb06291a3ec56eb7a0/assets/heap_shape.png"  alt="heap"/>
+</p>
+
+## Heap Applications.
+- Calculating the minimum or maximum element of a collection.
+- Implementing the heapsort algorithm.
+- Constructing a priority queue.
+- Building graph algorithms that use a priority queue, like `Dijkstra’s algorithm`.
+
+## Fitting a Binary Tree Into a List.
+- Trees hold nodes that store references to their children. In the case of a binary tree, these are references to a left and right child.
+- Heaps are binary trees, but they are implemented with a simple list.
+- Using a list might seem like an unusual way to build a tree, but one of the benefits of this heap implementation is efficient time and space complexity since the elements in a heap are all stored together in memory.
+
