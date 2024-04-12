@@ -14,7 +14,9 @@
 // Input: nums = [5,1,1,2,0,0]
 // Output: [0,0,1,1,2,5]
 // Explanation: Note that the values of nums are not necessairly unique.
-class Solution {
+
+// merge sort
+/*class Solution {
   List<int> sortArray(List<int> nums) {
     if (nums.length <= 1) {
       return nums;
@@ -54,4 +56,60 @@ void main() {
 
   List<int> nums2 = [5, 1, 1, 2, 0, 0];
   print(Solution().sortArray(nums2)); // Output: [0, 0, 1, 1, 2, 5]
+}*/
+// heap sort
+
+class Solution {
+  List<int> sortArray(List<int> nums) {
+    void heapify(List<int> arr, int n, int i) {
+      int largest = i; // Initialize largest as root
+      int left = 2 * i + 1; // left = 2*i + 1
+      int right = 2 * i + 2; // right = 2*i + 2
+
+      // If left child is larger than root
+      if (left < n && arr[left] > arr[largest]) {
+        largest = left;
+      }
+
+      // If right child is larger than largest so far
+      if (right < n && arr[right] > arr[largest]) {
+        largest = right;
+      }
+
+      // If largest is not root
+      if (largest != i) {
+        int swap = arr[i];
+        arr[i] = arr[largest];
+        arr[largest] = swap;
+
+        // Recursively heapify the affected sub-tree
+        heapify(arr, n, largest);
+      }
+    }
+
+    // Build heap (rearrange array)
+    int n = nums.length;
+    for (int i = n ~/ 2 - 1; i >= 0; i--) {
+      heapify(nums, n, i);
+    }
+
+    // One by one extract an element from heap
+    for (int i = n - 1; i > 0; i--) {
+      // Move current root to end
+      int temp = nums[0];
+      nums[0] = nums[i];
+      nums[i] = temp;
+
+      // call max heapify on the reduced heap
+      heapify(nums, i, 0);
+    }
+
+    return nums;
+  }
 }
+
+void main() {
+  Solution solution = Solution();
+  print(solution.sortArray([5, 2, 3, 1])); // Output: [1, 2, 3, 5]
+}
+
