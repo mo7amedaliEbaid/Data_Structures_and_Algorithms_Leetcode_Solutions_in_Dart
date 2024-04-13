@@ -32,7 +32,9 @@ List<int> plusOne(List<int> digits) {
 }
 
 void main() {
-  List<int> digits = [9, 9, 9];
+  List<int> digits = [1,2,3];
   List<int> result = plusOne(digits);
   print("Result: $result"); // Output: Result: [1, 0, 0, 0]
 }
+
+
