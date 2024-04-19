@@ -41,13 +41,17 @@ void main() {
 // Here's how the solution works:
 //
 // Initialize a variable n to store the length of the nums list.
-// Iterate through the nums list starting from the first element (index 0) up to the second-to-last element (index n - 2). In each iteration:
+// Iterate through the nums list starting from the first element (index 0) up to the second-to-last element (index n - 2).
+// In each iteration:
 // Use the XOR (^) operation between the current element nums[i] and the next element nums[i + 1].
 // Update the next element nums[i + 1] with the result of the XOR operation.
 // This operation effectively XORs all adjacent elements in the list.
-// After the loop, the last element of the nums list will contain the single number because all other numbers would have been XORed out (canceled) due to appearing twice.
+// After the loop, the last element of the nums list will contain the single number because all other numbers would have been XORed out
+// (canceled) due to appearing twice.
 
-// The XOR (^) operation, also known as the exclusive OR operation, is a binary operation that takes two operands and returns true if exactly one of the operands is true. In the context of integers, the XOR operation is performed bitwise, meaning it operates on each corresponding bit of the operands.
+// The XOR (^) operation, also known as the exclusive OR operation,
+// is a binary operation that takes two operands and returns true if exactly one of the operands is true.
+// In the context of integers, the XOR operation is performed bitwise, meaning it operates on each corresponding bit of the operands.
 //
 // Here's how the XOR operation works bitwise:
 //
