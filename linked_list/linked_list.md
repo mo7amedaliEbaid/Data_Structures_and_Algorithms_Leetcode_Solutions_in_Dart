@@ -5,10 +5,10 @@
 </p>
 
 - A linked list is a collection of values arranged in a linear, unidirectional sequence. 
-- It has several theoretical advantages over contiguous storage options such as the Dart List :
+- It has several theoretical advantages over contiguous storage options such as the Dart List.
  - Constant time insertion and removal from the front of the list.
  - Reliable performance characteristics.
-- A linked list is a chain of nodes:
+- A linked list is a chain of nodes.
 - Nodes have two responsibilities:
 1. Hold a value.
 2. Hold a reference to the next node. A null reference indicates the end of the list.
