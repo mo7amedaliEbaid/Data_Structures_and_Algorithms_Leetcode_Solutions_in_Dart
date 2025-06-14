@@ -6,7 +6,30 @@
 // Open brackets must be closed by the same type of brackets.
 // Open brackets must be closed in the correct order.
 // Every close bracket has a corresponding open bracket of the same type.
+
 class Solution {
+  bool isValid(String s) {
+    List<String> stack = [];
+    for (var i = 0; i < s.length; i++) {
+      if (s[i] == "(" || s[i] == "[" || s[i] == "{") {
+        stack.add(s[i]);
+      } else {
+        if (stack.isEmpty) return false;
+        String lastChar = stack.removeLast();
+        //  String lastChar = stack[stack.length - 1];
+        //   stack.removeAt(stack.length - 1);
+        if ((s[i] == ")" && lastChar != "(") ||
+            (s[i] == "]" && lastChar != "[") ||
+            (s[i] == "}" && lastChar != "{")) {
+          return false;
+        }
+      }
+    }
+    return stack.isEmpty;
+  }
+}
+
+/*class Solution {
   bool isValid(String s) {
     List<String> stack = [];
 
@@ -31,4 +54,4 @@ class Solution {
     // If stack is empty, all brackets matched correctly
     return stack.isEmpty;
   }
-}
+}*/
