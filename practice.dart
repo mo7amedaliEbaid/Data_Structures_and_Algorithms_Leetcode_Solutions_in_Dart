@@ -1,39 +1,44 @@
-main() {
-  print(Solution().isPalindrome("A man, a plan, a canal: Panama").toString());
-}
-
+// You are given an array prices where prices[i] is the price of a given stock on the ith day.
+//
+// You want to maximize your profit by choosing a single day to buy one stock and choosing
+// a different day in the future to sell that stock.
+//
+// Return the maximum profit you can achieve from this transaction.
+// If you cannot achieve any profit, return 0.
+//
+//
+//
+// Example 1:
+//
+// Input: prices = [7,1,5,3,6,4]
+// Output: 5
+// Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.
+// Note that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell.
+// Example 2:
+//
+// Input: prices = [7,6,4,3,1]
+// Output: 0
+// Explanation: In this case, no transactions are done and the max profit = 0.
+//
+//
+// Constraints:
+//
+// 1 <= prices.length <= 105
+// 0 <= prices[i] <= 104
 class Solution {
-  bool isPalindrome(String s) {
-    int left = 0;
-    int right = s.length - 1;
-
-    while (left < right) {
-      while (left < right && !isAlphaNumeric(s[left])) left++;
-      while (left < right && !isAlphaNumeric(s[right])) right--;
-
-      if (s[left].toLowerCase() != s[right].toLowerCase()) {
-        return false;
+  int maxProfit(List<int> prices) {
+    int minPrice = prices[0];
+    int maxProfit = 0;
+    for (var i = 0; i < prices.length; i++) {
+      if (prices[i] < minPrice) {
+        minPrice = prices[i];
       } else {
-        left++;
-        right--;
+        int profit = prices[i] - minPrice;
+        if (profit > maxProfit) {
+          maxProfit = profit;
+        }
       }
     }
-    return true;
-  }
-
-  bool isAlphaNumeric(String char) {
-    if (char.length != 1) return false;
-
-    int ascii = char.codeUnitAt(0);
-    int zero = "0".codeUnitAt(0);
-    int nine = "9".codeUnitAt(0);
-    int z = "z".codeUnitAt(0);
-    int a = "a".codeUnitAt(0);
-    int A = "A".codeUnitAt(0);
-    int Z = "Z".codeUnitAt(0);
-
-    return (ascii >= zero && ascii <= nine) ||
-        (ascii >= a && ascii <= z) ||
-        (ascii >= A && ascii <= Z);
+    return maxProfit;
   }
 }
