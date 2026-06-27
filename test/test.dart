@@ -1,56 +1,57 @@
-//Given a string s of '(' , ')' and lowercase English characters.
+// 217. Contains Duplicate
+// Solved
+// Easy
+// Topics
+// premium lock icon
+// Companies
+// Given an integer array nums, return true if any value appears at least twice in the array,
+// and return false if every element is distinct.
 //
-// Your task is to remove the minimum number of parentheses ( '(' or ')', in any positions )
-// so that the resulting parentheses string is valid and return any valid string.
-//
-// Formally, a parentheses string is valid if and only if:
-//
-// It is the empty string, contains only lowercase characters, or
-// It can be written as AB (A concatenated with B), where A and B are valid strings, or
-// It can be written as (A), where A is a valid string.
 //
 //
 // Example 1:
 //
-// Input: s = "lee(t(c)o)de)"
-// Output: "lee(t(c)o)de"
-// Explanation: "lee(t(co)de)" , "lee(t(c)ode)" would also be accepted.
+// Input: nums = [1,2,3,1]
+//
+// Output: true
+//
+// Explanation:
+//
+// The element 1 occurs at the indices 0 and 3.
+//
 // Example 2:
 //
-// Input: s = "a)b(c)d"
-// Output: "ab(c)d"
+// Input: nums = [1,2,3,4]
+//
+// Output: false
+//
+// Explanation:
+//
+// All elements are distinct.
+//
 // Example 3:
 //
-// Input: s = "))(("
-// Output: ""
-// Explanation: An empty string is also valid.
+// Input: nums = [1,1,1,3,3,4,3,2,4,2]
+//
+// Output: true
+//
+//
+//
+// Constraints:
+//
+// 1 <= nums.length <= 105
+// -109 <= nums[i] <= 109
 
-main(){
-  String s="a)b(c)d";
-  print(validateString(s));
-}
-String validateString(String s){
-  List<int> stack=[];
-  List<int> toRemove=[];
-  for(var i=0; i< s.length;i++){
-    if(s[i] =='('){
-     stack.add(i);
-    }else if(s[i] ==')'){
-      if(stack.isNotEmpty){
-        stack.removeLast();
-      }else{
-        toRemove.add(i);
+class Solution {
+  bool containsDuplicate(List<int> nums) {
+    Set<num> seen = {};
+    for (var i in nums) {
+      if (seen.contains(i)) {
+        return true;
+      } else {
+        seen.add(i);
       }
     }
+    return false;
   }
-  toRemove.addAll(stack);
-   StringBuffer stringBuffer=StringBuffer();
-   for(var i=0;i<s.length;i++){
-     if(!toRemove.contains(i)){
-       stringBuffer.write(s[i]);
-
-     }
-   }
-   return stringBuffer.toString();
-
 }
